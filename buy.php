@@ -117,9 +117,9 @@
             echo "<script>alert('Order has already been placed with this email.');</script>";
         } 
         else {
-            $insert_query = mysqli_query($con, "INSERT INTO booking (name, email, custid, medicine, date, time) VALUES ('$name', '$email', '$custid', '$medicine', '$date', '$time')");
+            $insert_query = mysqli_query($con, "INSERT INTO buying (name, email, custid, medicine, date, time) VALUES ('$name', '$email', '$custid', '$medicine', '$date', '$time')");
             if ($insert_query) {
-                echo "<script>alert('Your order has been placed successfully, thank you for booking!');</script>";
+                echo "<script>alert('Your order has been placed successfully, thank you for buying!');</script>";
                 echo "<script>window.location.href = 'homepage2.php';</script>";
             } else {
                 die("Error: " . mysqli_error($con));
