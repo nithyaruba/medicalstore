@@ -128,7 +128,7 @@
     } 
 ?>
     <div class="form-container">
-        <form id="bookingForm" method="POST" action="">
+        <form id="buyingForm" method="POST" action="">
             <h1>Book Now</h1>
             <div class="input-box">
                 <input type="text" id="name" name="name" placeholder="Username" required>
