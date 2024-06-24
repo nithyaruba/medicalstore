@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAIL Gas Booking</title>
+    <title>buy</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
@@ -109,7 +109,7 @@
         $name = mysqli_real_escape_string($con, $_POST['name']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $custid = mysqli_real_escape_string($con, $_POST['custid']);
-        $cylinder = mysqli_real_escape_string($con, $_POST['cylinder']);
+        $cylinder = mysqli_real_escape_string($con, $_POST['medicine']);
         $date = mysqli_real_escape_string($con, $_POST['date']);
         $time = mysqli_real_escape_string($con, $_POST['time']);
         $check_query = mysqli_query($con, "SELECT email FROM booking WHERE email='$email'");
@@ -117,7 +117,7 @@
             echo "<script>alert('Order has already been placed with this email.');</script>";
         } 
         else {
-            $insert_query = mysqli_query($con, "INSERT INTO booking (name, email, custid, cylinder, date, time) VALUES ('$name', '$email', '$custid', '$cylinder', '$date', '$time')");
+            $insert_query = mysqli_query($con, "INSERT INTO booking (name, email, custid, medicine, date, time) VALUES ('$name', '$email', '$custid', '$medicine', '$date', '$time')");
             if ($insert_query) {
                 echo "<script>alert('Your order has been placed successfully, thank you for booking!');</script>";
                 echo "<script>window.location.href = 'homepage2.php';</script>";
@@ -143,7 +143,7 @@
                 <i class='bx bx-id-card'></i>
             </div>
             <div class="input-box">
-                <input type="text" id="cylinder" name="cylinder" placeholder="Number of Cylinders" required>
+                <input type="text" id="medicine" name="medicine" placeholder="medicine" required>
                 <i class='bx bx-gas-pump'></i>
             </div>
             <label><b><i>Expected delivery date and time</i></b></label>
